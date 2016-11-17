@@ -81,7 +81,7 @@
 
 		\subsection{Conjuntos de Datos}
 
-			\begin{itemize}
+			\begin{enumerate}
 				\item \textbf{Arrhythmia}:
 				\item \textbf{Diabetes}:
 				\item \textbf{Glass}:
@@ -92,13 +92,29 @@
 				\item \textbf{Segment Test}:
 				\item \textbf{Soybean}:
 				\item \textbf{Vote}:
-			\end{itemize}
+			\end{enumerate}
 
 
 	\section{Test de Signos: SVM y J48}
 
         \paragraph{}
+		El test de signos se ha realizado sobre los 10 conjuntos de datos aplicando validación cruzada de 10 particiones. Lo que se pretende con este test es contar el número de victorias de cada clasificador y otorgarle la victoria al que más número de veces haya sido seleccionado ganador. Los resultados obtenidos han sido los siguientes:
 
+		\hfill
+		\begin{center}
+			\begin{tabular}{ | c || c | c | c | c | c | c | c | c | c | c | }
+				\hline
+				Datos		& 1 	& 2		& 3 	& 4 	& 5 	& 6		& 7 	& 8 	& 9 	& 10 \\ \hline \hline
+				Ganador		& SVM 	& SVM 	& J48 	& J48 	& SVM 	& SVM 	& SVM 	& J48 	& SVM 	& J48 \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		\paragraph{}
+		Por lo tanto, los resultados de aplicar el test de signos son los siguientes:
+		\[Victorias(J48) = 4\]
+		\[Victorias(SVM) = 6\]
+		Entonces podemos concluir que para los conjuntos de datos utilizados, obtiene más victorias, por lo tanto en promedio genera mejores resultados, el clasificador \textbf{SVM}.
 
 	\section{Ranking}
 
