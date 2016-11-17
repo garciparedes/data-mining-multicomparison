@@ -27,14 +27,14 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyhead[C]{ \today \ $\bullet$ Minería de Datos $\bullet$ Multicomparación de Algoritmos de Aprendizaje}
+\fancyhead[C]{ \today \ $\bullet$ Minería de Datos $\bullet$ Multicomparación de Clasificadores}
 \fancyfoot[RO]{\thepage}
 
 %-------------------------------------------------------------------------------
 %	TITLE SECTION
 %-------------------------------------------------------------------------------
 
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Multicomparación de \\ Algoritmos de Aprendizaje}} % Article title
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Multicomparación de \\ Clasificadores}} % Article title
 
 \author{Sergio García Prado}
 \date{\today}
@@ -60,15 +60,47 @@
 %-------------------------------------------------------------------------------
 
 	\section{Introducción}
+
+        \paragraph{}
+		La comparación consistirá en dos partes principales: la primera de ellas se basa en un Test de Signos sobre 2 de los clasificadores para todos los conjuntos de datos, mientras que la segunda parte se refiere a la realización de un Ranking en el cuál participarán todos los clasificadores.
+
+		\paragraph{}
+		Para la realización de estas pruebas se ha utilizado Weka, que es una plataforma de software para el aprendizaje automático y la minería de datos escrita en Java, desarrollada en la Universidad de Waikato y distribuida como Software Libre.
+
+		\paragraph{}
+		Por lo tanto, lo primero es describir tanto los clasificadores como los conjuntos de datos que se utilizarán en los tests de clasificación:
+
+		\subsection{Clasificadores}
+
+			\begin{itemize}
+				\item \textbf{SVM con kernel lineal}:
+				\item \textbf{3-NN}:
+				\item \textbf{Naive Bayes}:
+				\item \textbf{J48}:
+			\end{itemize}
+
+		\subsection{Conjuntos de Datos}
+
+			\begin{itemize}
+				\item \textbf{Arrhythmia}:
+				\item \textbf{Diabetes}:
+				\item \textbf{Glass}:
+				\item \textbf{Ionosphere}:
+				\item \textbf{Iris}:
+				\item \textbf{Labor}:
+				\item \textbf{Seeds}:
+				\item \textbf{Segment Test}:
+				\item \textbf{Soybean}:
+				\item \textbf{Vote}:
+			\end{itemize}
+
+
+	\section{Test de Signos: SVM y J48}
+
         \paragraph{}
 
 
-	\section{Implementación}
-
-        \paragraph{}
-
-
-	\section{Resultados}
+	\section{Ranking}
 
         \paragraph{}
 
