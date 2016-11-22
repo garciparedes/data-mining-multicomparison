@@ -62,10 +62,10 @@
 	\section{Introducción}
 
         \paragraph{}
-		La comparación consistirá en dos partes principales: la primera de ellas se basa en un Test de Signos sobre 2 de los clasificadores para todos los conjuntos de datos, mientras que la segunda parte se refiere a la realización de un Ranking en el cuál participarán todos los clasificadores.
+		La comparación consistirá en dos partes principales: la primera de ellas se basa en un Test de Signos sobre 2 de los clasificadores, (SVM y J48) para todos los conjuntos de datos, mientras que la segunda parte se refiere a la realización de un Ranking en el cuál participarán todos los clasificadores.
 
 		\paragraph{}
-		Para la realización de estas pruebas se ha utilizado Weka, que es una plataforma de software para el aprendizaje automático y la minería de datos escrita en Java, desarrollada en la Universidad de Waikato y distribuida como Software Libre.
+		Para la realización de estas pruebas se ha utilizado Weka, una plataforma de software para el aprendizaje automático y la minería de datos escrita en Java, desarrollada en la Universidad de Waikato y distribuida como Software Libre.
 
 		\paragraph{}
 		Por lo tanto, lo primero es describir tanto los clasificadores como los conjuntos de datos que se utilizarán en los tests de clasificación:
@@ -73,32 +73,35 @@
 		\subsection{Clasificadores}
 
 			\begin{itemize}
-				\item \textbf{SVM con kernel lineal}:
-				\item \textbf{3-NN}:
-				\item \textbf{Naive Bayes}:
-				\item \textbf{J48}:
+				\item \textbf{SVM con kernel lineal}: Las máquinas de vector soporte son una técnica aprendizaje supervisado. Este modelo representa los puntos de muestra en el espacio, separando las clases en  subespacios lo más amplios posibles mediante un hiperplano de separación definido como el vector entre los puntos de las clases, mas cercanos al que se llama vector soporte. En este caso se ha utilizado un kernel lineal.
+
+				\item \textbf{3-NN}: El método de los k vecinos más próximos es un método de clasificación supervisada no paramétrico. Estima el valor de la función de densidad de probabilidad o directamente la probabilidad a posteriori de las muestras para calcular los k puntos medios. En este caso se ha utilizado 3 puntos.
+
+				\item \textbf{Naive Bayes}: es un algoritmo de clasificación probabilístico basado en el teorema de Bayes y algunas hipótesis adicionales que facilitan la simplificación del problema. Estas hipótesis presuponen la independencia entre variables, de ahí es de donde proviene el apelativo \emph{naive (ingenuo)} ya que esta presuposición no siempre es cierta. Es un clasificador que utiliza aprendizaje supervisado y utiliza el método de máxima verosimilitud.
+
+				\item \textbf{J48}: es un algoritmo cuya función es generar un árbol de decisión. Su nombre original es \emph{C4.5} pero la implementación de Weka se denomina \emph{J48}. Para generar el árbol de decisión el árbol basa la selección de atributos en cada nodo según la entropía de los mismos con respecto a la clases en la que se desea clasificar las muestras. Es por tanto un algoritmo de aprendizaje supervisado.
 			\end{itemize}
 
 		\subsection{Conjuntos de Datos}
 
 			\begin{enumerate}
-				\item \textbf{Arrhythmia}:
-				\item \textbf{Diabetes}:
-				\item \textbf{Glass}:
-				\item \textbf{Ionosphere}:
-				\item \textbf{Iris}:
-				\item \textbf{Labor}:
-				\item \textbf{Seeds}:
-				\item \textbf{Segment Test}:
-				\item \textbf{Soybean}:
-				\item \textbf{Vote}:
+				\item \textbf{Arrhythmia}: 452 muestras con 279 atributos y 16 clases.
+				\item \textbf{Diabetes}: 768 muestras con 8 atributos y 2 clases.
+				\item \textbf{Glass}: 214 muestras con 9 atributos y 7 clases.
+				\item \textbf{Ionosphere}: 351 muestras con 34 atributos y 2 clases.
+				\item \textbf{Iris}: 150 muestras con 4 atributos y 3 clases.
+				\item \textbf{Labor}: 57 muestras con 16 atributos y 2 clases.
+				\item \textbf{Seeds}: 210 muestras con 7 atributos y 3 clases.
+				\item \textbf{Segment Test}: 210 muestras con 19 atributos y 7 clases.
+				\item \textbf{Soybean}: 683 muestras con 35 atributos y 19 clases.
+				\item \textbf{Vote}: 435 muestras con 16 atributos y 2 clases.
 			\end{enumerate}
 
 
 	\section{Test de Signos: SVM y J48}
 
         \paragraph{}
-		El test de signos se ha realizado sobre los 10 conjuntos de datos aplicando validación cruzada de 10 particiones. Lo que se pretende con este test es contar el número de victorias de cada clasificador y otorgarle la victoria al que más número de veces haya sido seleccionado ganador. Los resultados obtenidos han sido los siguientes:
+		El test de signos se ha realizado sobre los 10 conjuntos de datos aplicando validación cruzada de 10 particiones. Lo que se pretende con este test es contar el número de victorias de cada clasificador y otorgarle la victoria al que más número de veces haya sido seleccionado ganador. Los resultados obtenidos han sido los siguientes (siendo el conjunto de datos $i$ el que se encuentra en dicha posición en el apartado anterior.):
 
 		\hfill
 		\begin{center}
@@ -117,8 +120,6 @@
 		Entonces podemos concluir que para los conjuntos de datos utilizados, obtiene más victorias, por lo tanto en promedio genera mejores resultados, el clasificador \textbf{SVM}.
 
 	\section{Ranking}
-
-        \paragraph{}
 
 		\begin{center}
 			\includegraphics[width=\textwidth]{ranking-table}
@@ -153,7 +154,7 @@
 		Puesto que el valor de $F_{F}$ no es mayor que el valor crítico de $F_{0.05, (3,27)}$ entonces no podemos rechazar la hipótesis nula, que consiste en asumir que los clasificadores son equivalentes.
 
 		\paragraph{}
-		Puesto que no son significativamente diferentes tanto con el test de Friedman (muy exigente) como con el de Iman y Davenport (menos exigente), no tiene sentido realizar el test post-hoc para conocer cuáles lo son ya que este test ya nos ha dicho que no lo es ninguno.
+		Debido a que no son significativamente diferentes tanto con el test de Friedman (muy exigente) como con el de Iman y Davenport (menos exigente), no tiene sentido realizar el test post-hoc para conocer cuáles lo son ya que este test ya nos ha dicho que no lo es ninguno.
 
 
 \end{document}
