@@ -12,10 +12,6 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-\usepackage{abstract}
-\renewcommand{\abstractnamefont}{\normalfont\bfseries}
-\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
-
 \usepackage{titlesec}
 \renewcommand\thesection{\Roman{section}}
 \renewcommand\thesubsection{\Roman{subsection}}
@@ -46,14 +42,6 @@
 	\maketitle % Insert title
 
 	\thispagestyle{fancy} % All pages have headers and footers
-
-%-------------------------------------------------------------------------------
-%	ABSTRACT
-%-------------------------------------------------------------------------------
-
-	\begin{abstract}
-		\noindent
-	\end{abstract}
 
 %-------------------------------------------------------------------------------
 %	TEXT
@@ -101,7 +89,10 @@
 	\section{Test de Signos: SVM y J48}
 
         \paragraph{}
-		El test de signos se ha realizado sobre los 10 conjuntos de datos aplicando validación cruzada de 10 particiones. Lo que se pretende con este test es contar el número de victorias de cada clasificador y otorgarle la victoria al que más número de veces haya sido seleccionado ganador. Los resultados obtenidos han sido los siguientes (siendo el conjunto de datos $i$ el que se encuentra en dicha posición en el apartado anterior.):
+		El test de signos se ha realizado sobre los 10 conjuntos de datos aplicando validación cruzada de 10 particiones. Lo que se pretende con este test es contar el número de victorias de cada clasificador y otorgarle la victoria al que más número de veces haya sido seleccionado ganador. Los resultados de los tests se han obtenido a partir de la tasa de error estimada mediante validación cruzada de 10 particiones.
+
+		\paragraph{}
+		Los resultados obtenidos han sido los siguientes (siendo el conjunto de datos $i$ el que se encuentra en dicha posición en el apartado anterior.):
 
 		\hfill
 		\begin{center}
@@ -121,15 +112,18 @@
 
 	\section{Ranking}
 
+		\paragraph{}
+		El ranking que se muestra en la tabla inferior muestra los resultados de obtener las tasas de error de cada clasificador en cada conjunto de datos. Para realizar el ranking promedio se ha realizado un ranking para conjunto de datos y una vez realizado esto, se han promediado los resultados. La tasa de error se ha obtenido mediante validación cruzada repetida de 5 particiones con 5 repeticiones.
+
 		\begin{center}
 			\includegraphics[width=\textwidth]{ranking-table}
 		\end{center}
 
 		\paragraph{}
-		Realizaremos el test Friedman y el de Iman y Davenport:
+		El siguiente paso es comprobar si estos resultados son significativos según los tests de Friedman y de Iman y Davenport:
 
 		\paragraph{}
-		Los valores que se utilizarán son los siguientes:
+		Los valores que se utilizarán en las fórmulas son los siguientes:
 
 		$k = 4$, $N =10$,
 		$\alpha = 0.05$,
