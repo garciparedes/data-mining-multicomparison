@@ -108,7 +108,7 @@
 		Por lo tanto, los resultados de aplicar el test de signos son los siguientes:
 		\[Victorias(J48) = 4\]
 		\[Victorias(SVM) = 6\]
-		Entonces podemos concluir que para los conjuntos de datos utilizados, obtiene más victorias, por lo tanto en promedio genera mejores resultados, el clasificador \textbf{SVM}.
+		Entonces podemos concluir que para los conjuntos de datos utilizados, obtiene más victorias, por lo tanto en promedio genera mejores resultados, el clasificador \textbf{SVM}. Las victorias que obtiene este clasificador son en los conjuntos de datos cuyos atributos son de carácter numérico, mientras que J48 destaca cuando son atributos categóricos.
 
 	\section{Ranking}
 
@@ -150,5 +150,7 @@
 		\paragraph{}
 		Debido a que no son significativamente diferentes tanto con el test de Friedman (muy exigente) como con el de Iman y Davenport (menos exigente), no tiene sentido realizar el test post-hoc para conocer cuáles lo son ya que este test ya nos ha dicho que no lo es ninguno.
 
+		\paragraph{}
+		En el caso del ranking promedio en el cual aparecen todos los clasificadores, el resultado es equivalente al test de signos para la máquina de vectores soporte y J48. El comportamiento de los otros dos algoritmos (Ibk y Naive Bayes) obtiene peores resultados en promedio. Las posiciones en el ranking no están muy diferenciadas entre si, es decir, para el número de datos y clasificadores, es decir, los resultados no son significativos (con otros conjuntos de datos podrían haberse posicionado de manera diferente en el ranking promedio). Como consecuencia de esto no podemos asegurar que ninguno obtenga mejores resultados que otros.
 
 \end{document}
